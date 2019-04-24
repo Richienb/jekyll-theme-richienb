@@ -10,13 +10,12 @@ layout: compress
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{ page.title }}</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
     <style>
-        {% capture include_to_scssify %}
-            {% include normalize.css %}
-            {% include styles.scss %}
+        {% include normalize.css %}
+        {% capture include_to_sassify %}
+            {% include styles.sass %}
         {% endcapture %}
-        {{ include_to_scssify | scssify }}
+        {{ include_to_sassify | sassify }}
     </style>
 </head>
 
@@ -25,15 +24,14 @@ layout: compress
     <main class="main-content mdc-typography mdc-elevation--z8">
         <script async src="https://cdn.carbonads.com/carbon.js?serve=CK7I6K3E&amp;placement=wwwrichie-bendallml" id="_carbonads_js"></script>
         <button class="theme-toggle mdc-fab mdc-fab--mini" aria-label="Toggle theme" data-mdc-auto-init="MDCRipple">
-            <svg class="theme-toggle--svg mdc-fab__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <svg class="theme-toggle__svg mdc-fab__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                 <path fill="none" d="M0 0h24v24H0V0z" />
-                <path
-                    d="M11 7l-3.2 9h1.9l.7-2h3.2l.7 2h1.9L13 7h-2zm-.15 5.65L12 9l1.15 3.65h-2.3zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69zm-2 5.79V18h-3.52L12 20.48 9.52 18H6v-3.52L3.52 12 6 9.52V6h3.52L12 3.52 14.48 6H18v3.52L20.48 12 18 14.48z" />
+                <path d="M11 7l-3.2 9h1.9l.7-2h3.2l.7 2h1.9L13 7h-2zm-.15 5.65L12 9l1.15 3.65h-2.3zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69zm-2 5.79V18h-3.52L12 20.48 9.52 18H6v-3.52L3.52 12 6 9.52V6h3.52L12 3.52 14.48 6H18v3.52L20.48 12 18 14.48z" />
             </svg>
         </button>
         {{ content }}
         <script src="https://unpkg.com/material-components-web@1.1.1/dist/material-components-web.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.slim.min.js"></script>
         <script>
             {% include index.js %}
         </script>
