@@ -121,8 +121,11 @@ body
       color: white
       background-color: #303030
 
+    .highlight
+      background-color: #181818
+
     hr
-        border-bottom-color: rgba(256, 256, 256, .12)
+      border-bottom-color: rgba(256, 256, 256, 0.12)
 
     blockquote, .mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input, .mdc-text-field:not(.mdc-text-field--disabled) .mdc-floating-label
       // Make MDC Text Field label white
@@ -149,11 +152,12 @@ body
     // Animate background colours changing
     transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1)
 
-    .main-content, a, ::selection
+    .main-content, a, ::selection, .main-content > .highlight
       // Animate background and foreground colours changing
       transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1)
       transition-property: background-color, color
 
+body, .highlight
   &::-webkit-scrollbar
     // Setup main scrollbar
     border-radius: 100px
@@ -195,265 +199,297 @@ body
       border: solid transparent
       border-width: 0 0 0 4px
 
-/**
- * Syntax highlighting styles
+// Operators
+$codehilite-operator: inherit
+$codehilite-operator-word: inherit
+
+// Generics
+$codehilite-generic-emph: #000000
+$codehilite-generic-error: #AA0000
+$codehilite-generic-heading: #999999
+$codehilite-generic-output: #888888
+$codehilite-generic-prompt: #555555
+$codehilite-generic-strong: inherit
+$codehilite-generic-subheading: #AAAAAA
+$codehilite-generic-traceback: #AA0000
+
+// Diffs
+$codehilite-diff-deleted: #FFDDDD
+$codehilite-diff-inserted: #DDFFDD
+
+// Keywords
+$codehilite-keyword: #3B78E7
+$codehilite-keyword-constant: #A71D5D
+$codehilite-keyword-declaration: #3B78E7
+$codehilite-keyword-namespace: #3B78E7
+$codehilite-keyword-pseudo: #A71D5D
+$codehilite-keyword-reserved: #3E61A2
+$codehilite-keyword-type: #3E61A2
+
+// Comments
+$codehilite-comment: #999999
+$codehilite-comment-multiline: #999999
+$codehilite-comment-preproc: #666666
+$codehilite-comment-single: #999999
+$codehilite-comment-shebang: #999999
+$codehilite-comment-special: #999999
+
+// Names
+$codehilite-name-attribute: #C2185B
+$codehilite-name-builtin: #C2185B
+$codehilite-name-builtin-pseudo: #3E61A2
+$codehilite-name-class: #C2185B
+$codehilite-name-constant: #3E61A2
+$codehilite-name-decorator: #666666
+$codehilite-name-entity: #666666
+$codehilite-name-exception: #C2185B
+$codehilite-name-function: #C2185B
+$codehilite-name-label: #3B5179
+$codehilite-name-namespace: #EC407A
+$codehilite-name-tag: #3B78E7
+$codehilite-name-variable: #3E61A2
+$codehilite-name-variable-class: #3E61A2
+$codehilite-name-variable-instance: #3E61A2
+$codehilite-name-variable-global: #3E61A2
+$codehilite-name-extension: #EC407A
+
+// Numbers
+$codehilite-literal-number: #E74C3C
+$codehilite-literal-number-float: #E74C3C
+$codehilite-literal-number-hex: #E74C3C
+$codehilite-literal-number-integer: #E74C3C
+$codehilite-literal-number-integer-long: #E74C3C
+$codehilite-literal-number-oct: #E74C3C
+
+// Strings
+$codehilite-literal-string: #0D904F
+$codehilite-literal-string-backticks: #0D904F
+$codehilite-literal-string-char: #0D904F
+$codehilite-literal-string-doc: #999999
+$codehilite-literal-string-double: #0D904F
+$codehilite-literal-string-escape: #183691
+$codehilite-literal-string-heredoc: #183691
+$codehilite-literal-string-interpol: #183691
+$codehilite-literal-string-other: #183691
+$codehilite-literal-string-regex: #009926
+$codehilite-literal-string-single: #0D904F
+$codehilite-literal-string-symbol: #0D904F
+
+// Miscellaneous
+$codehilite-error: #A61717
+$codehilite-whitespace: transparent
+
+// Codehilite extension
 .highlight
-  .c
-    color: #998
-    font-style: italic
-
-  // Comment
-  .err
-    color: #a61717
-    background-color: #e3d2d2
-
-  // Error
-  .k
-    font-weight: bold
-
-  // Keyword
+  // Operators
   .o
-    font-weight: bold
+    color: $codehilite-operator
 
-  // Operator
-  .cm
-    color: #998
-    font-style: italic
-
-  // Comment.Multiline
-  .cp
-    color: #999
-    font-weight: bold
-
-  // Comment.Preproc
-  .c1
-    color: #998
-    font-style: italic
-
-  // Comment.Single
-  .cs
-    color: #999
-    font-weight: bold
-    font-style: italic
-
-  // Comment.Special
-  .gd
-    color: #000
-    background-color: #fdd
-
-  // Generic.Deleted
-  .gd .x
-    color: #000
-    background-color: #faa
-
-  // Generic.Deleted.Specific
-  .ge
-    font-style: italic
-
-  // Generic.Emph
-  .gr
-    color: #a00
-
-  // Generic.Error
-  .gh
-    color: #999
-
-  // Generic.Heading
-  .gi
-    color: #000
-    background-color: #dfd
-
-  // Generic.Inserted
-  .gi .x
-    color: #000
-    background-color: #afa
-
-  // Generic.Inserted.Specific
-  .go
-    color: #888
-
-  // Generic.Output
-  .gp
-    color: #555
-
-  // Generic.Prompt
-  .gs
-    font-weight: bold
-
-  // Generic.Strong
-  .gu
-    color: #aaa
-
-  // Generic.Subheading
-  .gt
-    color: #a00
-
-  // Generic.Traceback
-  .kc
-    font-weight: bold
-
-  // Keyword.Constant
-  .kd
-    font-weight: bold
-
-  // Keyword.Declaration
-  .kp
-    font-weight: bold
-
-  // Keyword.Pseudo
-  .kr
-    font-weight: bold
-
-  // Keyword.Reserved
-  .kt
-    color: #458
-    font-weight: bold
-
-  // Keyword.Type
-  .m
-    color: #099
-
-  // Literal.Number
-  .s
-    color: #d14
-
-  // Literal.String
-  .na
-    color: #008080
-
-  // Name.Attribute
-  .nb
-    color: #0086B3
-
-  // Name.Builtin
-  .nc
-    color: #458
-    font-weight: bold
-
-  // Name.Class
-  .no
-    color: #008080
-
-  // Name.Constant
-  .ni
-    color: #800080
-
-  // Name.Entity
-  .ne
-    color: #900
-    font-weight: bold
-
-  // Name.Exception
-  .nf
-    color: #900
-    font-weight: bold
-
-  // Name.Function
-  .nn
-    color: #555
-
-  // Name.Namespace
-  .nt
-    color: #000080
-
-  // Name.Tag
-  .nv
-    color: #008080
-
-  // Name.Variable
   .ow
-    font-weight: bold
+    color: $codehilite-operator-word
 
-  // Operator.Word
-  .w
-    color: #bbb
+  // Generics
+  .ge
+    color: $codehilite-generic-emph
 
-  // Text.Whitespace
-  .mf
-    color: #099
+  .gr
+    color: $codehilite-generic-error
 
-  // Literal.Number.Float
-  .mh
-    color: #099
+  .gh
+    color: $codehilite-generic-heading
 
-  // Literal.Number.Hex
-  .mi
-    color: #099
+  .go
+    color: $codehilite-generic-output
 
-  // Literal.Number.Integer
-  .mo
-    color: #099
+  .gp
+    color: $codehilite-generic-prompt
 
-  // Literal.Number.Oct
-  .sb
-    color: #d14
+  .gs
+    color: $codehilite-generic-strong
 
-  // Literal.String.Backtick
-  .sc
-    color: #d14
+  .gu
+    color: $codehilite-generic-subheading
 
-  // Literal.String.Char
-  .sd
-    color: #d14
+  .gt
+    color: $codehilite-generic-traceback
 
-  // Literal.String.Doc
-  .s2
-    color: #d14
+  // Diffs
+  .gd
+    background-color: $codehilite-diff-deleted
 
-  // Literal.String.Double
-  .se
-    color: #d14
+  .gi
+    background-color: $codehilite-diff-inserted
 
-  // Literal.String.Escape
-  .sh
-    color: #d14
+  // Keywords
+  .k
+    color: $codehilite-keyword
 
-  // Literal.String.Heredoc
-  .si
-    color: #d14
+  .kc
+    color: $codehilite-keyword-constant
 
-  // Literal.String.Interpol
-  .sx
-    color: #d14
+  .kd
+    color: $codehilite-keyword-declaration
 
-  // Literal.String.Other
-  .sr
-    color: #009926
+  .kn
+    color: $codehilite-keyword-namespace
 
-  // Literal.String.Regex
-  .s1
-    color: #d14
+  .kp
+    color: $codehilite-keyword-pseudo
 
-  // Literal.String.Single
-  .ss
-    color: #990073
+  .kr
+    color: $codehilite-keyword-reserved
 
-  // Literal.String.Symbol
+  .kt
+    color: $codehilite-keyword-type
+
+  // Comments
+  .c
+    color: $codehilite-comment
+
+  .cm
+    color: $codehilite-comment-multiline
+
+  .cp
+    color: $codehilite-comment-preproc
+
+  .c1
+    color: $codehilite-comment-single
+
+  .ch
+    color: $codehilite-comment-shebang
+
+  .cs
+    color: $codehilite-comment-special
+
+  // Names
+  .na
+    color: $codehilite-name-attribute
+
+  .nb
+    color: $codehilite-name-builtin
+
   .bp
-    color: #999
+    color: $codehilite-name-builtin-pseudo
 
-  // Name.Builtin.Pseudo
+  .nc
+    color: $codehilite-name-class
+
+  .no
+    color: $codehilite-name-constant
+
+  .nd
+    color: $codehilite-name-entity
+
+  .ni
+    color: $codehilite-name-entity
+
+  .ne
+    color: $codehilite-name-exception
+
+  .nf
+    color: $codehilite-name-function
+
+  .nl
+    color: $codehilite-name-label
+
+  .nn
+    color: $codehilite-name-namespace
+
+  .nt
+    color: $codehilite-name-tag
+
+  .nv
+    color: $codehilite-name-variable
+
   .vc
-    color: #008080
+    color: $codehilite-name-variable-class
 
-  // Name.Variable.Class
   .vg
-    color: #008080
+    color: $codehilite-name-variable-global
 
-  // Name.Variable.Global
   .vi
-    color: #008080
+    color: $codehilite-name-variable-instance
 
-  // Name.Variable.Instance
+  .nx
+    color: $codehilite-name-extension
+
+  // Numbers
+  .m
+    color: $codehilite-literal-number
+
+  .mf
+    color: $codehilite-literal-number-float
+
+  .mh
+    color: $codehilite-literal-number-hex
+
+  .mi
+    color: $codehilite-literal-number-integer
+
   .il
-    color: #099
+    color: $codehilite-literal-number-integer-long
 
-  // Literal.Number.Integer.Long
+  .mo
+    color: $codehilite-literal-number-oct
+
+  // Strings
+  .s
+    color: $codehilite-literal-string
+
+  .sb
+    color: $codehilite-literal-string-backticks
+
+  .sc
+    color: $codehilite-literal-string-char
+
+  .sd
+    color: $codehilite-literal-string-doc
+
+  .s2
+    color: $codehilite-literal-string-double
+
+  .se
+    color: $codehilite-literal-string-escape
+
+  .sh
+    color: $codehilite-literal-string-heredoc
+
+  .si
+    color: $codehilite-literal-string-interpol
+
+  .sx
+    color: $codehilite-literal-string-other
+
+  .sr
+    color: $codehilite-literal-string-regex
+
+  .s1
+    color: $codehilite-literal-string-single
+
+  .ss
+    color: $codehilite-literal-string-symbol
+
+  // Miscellaneous
+  .err
+    color: $codehilite-error
+
+  .w
+    color: $codehilite-whitespace
+
+  border-radius: 4px
+  padding: 12px
+  background-color: #eeeeee
+  margin: 1rem 0
+  line-height: 1.4
+  overflow: auto
+
+pre.highlight
+  margin: 0
 
 /*!
- *Material Components for the Web
- *Copyright (c) 2019 Google Inc.
- *License: MIT
+ * Material Components for the Web
+ * Copyright (c) 2019 Google Inc.
+ * License: MIT
 
 .mdc-typography
   font-family: Roboto, sans-serif
@@ -539,7 +575,7 @@ li
   text-decoration: inherit
   text-transform: inherit
 
-p, td
+p
   font-family: Roboto, sans-serif
   -moz-osx-font-smoothing: grayscale
   -webkit-font-smoothing: antialiased
@@ -551,21 +587,46 @@ p, td
   text-transform: inherit
 
 blockquote
-    border-left: .25em solid #C5CAE9
-    color: #6a737d
-    padding: 0 1em
-    margin-left: 0
+  border-left: 0.25em solid #C5CAE9
+  color: #6a737d
+  padding: 0 1em
+  margin-left: 0
 
 hr
-    margin: 3px 0 4px 0
-    border-top: 0
-    border-left: 0
-    border-bottom-color: rgba(0,0,0,.12)
-    border-bottom-width: 1px
-    border-bottom-style: solid
+  margin: 3px 0 4px 0
+  border-top: 0
+  border-left: 0
+  border-bottom-color: rgba(0, 0, 0, 0.12)
+  border-bottom-width: 1px
+  border-bottom-style: solid
+
+li
+  padding: 8px
+
+table, th, td
+  border: none
+
+table
+  width: 100%
+  display: table
+  border-collapse: collapse
+  border-spacing: 0
+
+  > tbody > tr
+    transition: background-color 0.25s ease
+
+    &:hover
+      background-color: rgba(242, 242, 242, 0.5)
+
+tr
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12)
 
 td, th
-    padding: 8px
+  padding: 15px 5px
+  display: table-cell
+  text-align: left
+  vertical-align: middle
+  border-radius: 2px
 
 /*!
  *Material Components for the Web

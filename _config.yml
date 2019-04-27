@@ -1,5 +1,5 @@
 sass:
-  style:      compressed
-  
+  style:    compressed
+
 plugins:
   - jekyll-remote-theme

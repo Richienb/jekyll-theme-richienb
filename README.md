@@ -1,4 +1,24 @@
-# jekyll-theme-richienb
+# Jekyll Theme: Richienb
+
+A jekyll theme that follows the [Richienb style guide](https://github.com/Richienb/richienb#style-guide).
+
+## Basic usage:
+
+Set the following remote theme in your `_config.yml` file.
+
+```yml
+remote_theme: Richienb/jekyll-theme-richienb
+```
+
+### Disabling ads
+
+By default, Carbon Ads are enabled to help support the developer. If, however you don't want to support the developer free of charge, set the `ads` property in your configuration file.
+
+```yml
+ads: false
+```
+
+## Playground
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
