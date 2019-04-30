@@ -81,7 +81,7 @@ body
           margin-right: 9px
           float: left
 
-          @media only screen and (max-width 400px)
+          @media only screen and (max-width: 400px)
             // If mobile-like screen width decrase ad size
             width: auto
             max-width: 130px
@@ -107,12 +107,23 @@ body
         text-transform: uppercase
         text-decoration: none
 
+  .full-width
+    width: 100%
+
   &.setting--dark
     // When dark mode active
     background-color: #212121 !important
     --mdc-theme-text-primary-on-background: white
     --mdc-theme-text-secondary-on-background: white
     --mdc-theme-text-icon-on-background: white
+
+    .highlight
+      // Darken highlight background
+      background-color: #181818
+
+    hr
+      // Darken line colour
+      border-bottom-color: rgba(256, 256, 256, 0.12)
 
     &::-webkit-scrollbar
       background-color: #505050
@@ -121,23 +132,13 @@ body
       color: white
       background-color: #303030
 
-    .highlight
-      background-color: #181818
-
-    hr
-      border-bottom-color: rgba(256, 256, 256, 0.12)
-
-    blockquote, .mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input, .mdc-text-field:not(.mdc-text-field--disabled) .mdc-floating-label
-      // Make MDC Text Field label white
-      color: white
-
-    .mdc-text-field--outlined:not(.mdc-text-field--disabled), .mdc-text-field--outlined:not(.mdc-text-field--disabled), .mdc-text-field--outlined:not(.mdc-text-field--disabled), .mdc-notched-outline__trailing
-      // Make MDC Text Field outline white
-      border-color: white
-
-    #carbonads .carbon-text
-      // Make carbon ad text white
+    blockquote, .mdc-select__selected-text, .mdc-text-field__input, .mdc-floating-label, #carbonads .carbon-text
+      // Make blockquote, MDC Select text, MDC floating label and carbon ad text white
       color: white !important
+
+    .mdc-notched-outline__leading, .mdc-notched-outline__notch, .mdc-notched-outline__trailing
+      // Make MDC outline white
+      border-color: white !important
 
     a
       // Lighten link colour
@@ -164,7 +165,6 @@ body, .highlight
     background-color: transparent
     width: 8px
     height: 8px
-    overflow: visible
 
     &-button
       // Setup scrollbar up and down buttons
@@ -177,13 +177,9 @@ body, .highlight
 
     &-thumb
       // Setup scrollbar thumb
-      border: 1px solid rgba(255, 255, 255, 0.4)
       border-radius: 100px
       background-color: rgba(0, 0, 0, 0.2)
-      border: solid transparent
-      border-width: 1px 1px 1px 6px
       min-height: 28px
-      padding: 100px 0 0
 
       &:hover
         // Darken if hovered
@@ -196,7 +192,6 @@ body, .highlight
     &-track
       // Setup bar for scrollbar
       background-clip: padding-box
-      border: solid transparent
       border-width: 0 0 0 4px
 
 // Operators
