@@ -10,12 +10,53 @@ Set the following remote theme in your `_config.yml` file.
 remote_theme: Richienb/jekyll-theme-richienb
 ```
 
+### Custom theme colour
+
+By default, the primary theme colour `#3F51B5` and accent theme colour `#f44336` is used. You can overrride this by setting the `primarycolour` or `accentcolour` property.
+
+```yml
+primarycolour: "#6200ee"
+accentcolour: "#018786"
+```
+
+### Setting favicon
+
+You can set the favicon source by setting the `favicon` property.
+
+```yml
+favicon: "favicon.ico"
+```
+
+### Disabling dark mode toggle button
+
+By default a FAB is shown in the top-right of the document which allows the user to change the theme used. To disable the FAB, set the `darktoggle` property.
+
+```yml
+darktoggle: false
+```
+
+### Disabling scripts
+
+You can disable all scripts and script-enabled utilities by setting the `scripts` property.
+
+```yml
+scripts: false
+```
+
 ### Disabling ads
 
 By default, Carbon Ads are enabled to help support the developer. If, however you don't want to support the developer free of charge, set the `ads` property in your configuration file.
 
 ```yml
 ads: false
+```
+
+### Disabling analytics preconnection
+
+You can disable Google analytics preconnection by setting the `analytics` property.
+
+```yml
+analytics: false
 ```
 
 ## Playground

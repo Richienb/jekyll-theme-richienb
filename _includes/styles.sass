@@ -1,16 +1,15 @@
-
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500")
 
 @font-face
   font-family: "Fira Code"
   font-style: normal
   font-weight: 400
-  src: local("Fira Code"), url("https://cdn.jsdelivr.net/npm/firacode@1.205.0/distr/woff2/FiraCode-Regular.woff2") format("woff2"), url("https://cdn.jsdelivr.net/npm/firacode@1.205.0/distr/woff/FiraCode-Regular.woff") format("woff"), url("https://cdn.jsdelivr.net/npm/firacode@1.205.0/distr/ttf/FiraCode-Regular.ttf") format("truetype"), url("https://cdn.jsdelivr.net/npm/firacode@1.205.0/distr/otf/FiraCode-Regular.otf") format("opentype"), url("https://cdn.jsdelivr.net/npm/firacode@1.205.0/distr/eot/FiraCode-Regular.eot") format("embedded-opentype")
+  src: local("Fira Code"), url("https://cdn.jsdelivr.net/npm/firacode@1.206.0/distr/woff2/FiraCode-Regular.woff2") format("woff2"), url("https://cdn.jsdelivr.net/npm/firacode@1.206.0/distr/woff/FiraCode-Regular.woff") format("woff"), url("https://cdn.jsdelivr.net/npm/firacode@1.206.0/distr/ttf/FiraCode-Regular.ttf") format("truetype"), url("https://cdn.jsdelivr.net/npm/firacode@1.206.0/distr/otf/FiraCode-Regular.otf") format("opentype"), url("https://cdn.jsdelivr.net/npm/firacode@1.206.0/distr/eot/FiraCode-Regular.eot") format("embedded-opentype")
 
 body
   // Setup MDC Theme
-  --mdc-theme-primary: #3f51b5
-  --mdc-theme-secondary: #f44336
+  --mdc-theme-primary: {{ site.primarycolour | default: '#3F51B5' }}
+  --mdc-theme-secondary: {{ site.accentcolour | default: '#f44336' }}
 
   // Set main background colour
   background-color: #fafafa
@@ -48,11 +47,11 @@ body
 
     a
       // Set default link colour
-      color: #3f51b5
+      color: var(--mdc-theme-primary, #6200ee)
 
-    ::selection
+    \::selection
       // Set selection colour
-      background-color: #3f51b5
+      background-color: var(--mdc-theme-primary, #6200ee)
       color: white
 
     #carbonads
@@ -110,6 +109,7 @@ body
   .full-width
     width: 100%
 
+{% if site.darktoggle != false %}
   &.setting--dark
     // When dark mode active
     background-color: #212121 !important
@@ -144,11 +144,12 @@ body
       // Lighten link colour
       color: #5c6bc0
 
-    ::selection
+    \::selection
       // Lighten selection colour
       background-color: #c5cae9
       color: black
 
+{% endif %}
   &.setting--animate-colours
     // Animate background colours changing
     transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1)
@@ -473,8 +474,6 @@ $codehilite-whitespace: transparent
 
   border-radius: 4px
   padding: 12px
-  background-color: #eeeeee
-  margin: 1rem 0
   line-height: 1.4
   overflow: auto
 
@@ -482,9 +481,12 @@ pre.highlight
   margin: 0
 
 .highlighter-rouge
-    background-color: #eeeeee
-    padding: 2px
-    border-radius: 2px
+  padding: 2px
+  border-radius: 2px
+
+.highlight, .highlighter-rouge
+  background-color: #eeeeee
+  font-family: "Fira Code"
 
 /*!
  * Material Components for the Web

@@ -4,42 +4,70 @@ layout: compress
 
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-        <meta name="theme-color" content="#3F51B5">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-        <title>{{ page.title }}</title>
-        <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
-        <style>
-            {% capture include_to_sassify %}
-                {% include normalize.sass %}
-                {% include styles.sass %}
-            {% endcapture %}
-            {{include_to_sassify | sassify}}
-        </style>
-    </head>
-    <body>
-        <div class="ribbon mdc-elevation--z4"></div>
-        <main class="main-content mdc-typography mdc-elevation--z8">
-            {% if site.ads != false %}
-                <script async id="_carbonads_js" src="https://cdn.carbonads.com/carbon.js?serve=CK7I6K3E&amp;placement=wwwrichie-bendallml"></script>
-            {% endif %}
-            <button aria-label="Toggle theme" class="theme-toggle mdc-fab mdc-fab--mini" data-mdc-auto-init="MDCRipple">
-                <svg class="theme-toggle__svg mdc-fab__icon" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M0 0h24v24H0V0z" fill="none"/>
-                    <path d="M11 7l-3.2 9h1.9l.7-2h3.2l.7 2h1.9L13 7h-2zm-.15 5.65L12 9l1.15 3.65h-2.3zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69zm-2 5.79V18h-3.52L12 20.48 9.52 18H6v-3.52L3.52 12 6 9.52V6h3.52L12 3.52 14.48 6H18v3.52L20.48 12 18 14.48z"/>
-                </svg>
-            </button>
-            {{ content }}
-            <script async src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-            <script src="https://unpkg.com/material-components-web@1.1.1/dist/material-components-web.min.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.slim.min.js"></script>
-            <script>
-                {% include index.js %}
-            </script>
-        </main>
-    </body>
+    <meta name="theme-color" content="{{ site.primarycolour | default: '#3F51B5' }}">
+
+    {% if page.favicon %}
+    <link rel="shortcut icon" href="{{ page.favicon}}">
+    {% endif %}
+
+    <title>{{ page.title }}</title>
+    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+
+    {% if site.scripts != false %}
+    {% if site.ads != false %}
+    <link rel="preconnect" href="https://srv.carbonads.net">
+    <link rel="preconnect" href="https://cdn4.buysellads.net">
+    <link rel="preconnect" href="https://cdn.carbonads.com">
+    <link rel="preconnect" href="https://ad.doubleclick.net">
+    {% endif %}
+
+    {% if site.analytics != false %}
+    <link rel="preconnect" href="https://www.google-analytics.com">
+    {% endif %}
+    {% endif %}
+
+    <style>
+        {% capture include_to_sassify %}
+        {% include normalize.sass %}
+        {% include styles.sass %}
+        {% endcapture %}
+        {{include_to_sassify | sassify}}
+    </style>
+</head>
+
+<body>
+    <div class="ribbon mdc-elevation--z4"></div>
+    <main class="main-content mdc-typography mdc-elevation--z8">
+        {% if site.scripts != false %}
+        {% if site.ads != false %}
+        <script async id="_carbonads_js" src="https://cdn.carbonads.com/carbon.js?serve=CK7I6K3E&amp;placement=wwwrichie-bendallml"></script>
+        {% endif %}
+        {% if site.darktoggle != false %}
+        <button aria-label="Toggle theme" class="theme-toggle mdc-fab mdc-fab--mini" data-mdc-auto-init="MDCRipple">
+            <svg class="theme-toggle__svg mdc-fab__icon" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 0h24v24H0V0z" fill="none" />
+                <path
+                    d="M11 7l-3.2 9h1.9l.7-2h3.2l.7 2h1.9L13 7h-2zm-.15 5.65L12 9l1.15 3.65h-2.3zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69zm-2 5.79V18h-3.52L12 20.48 9.52 18H6v-3.52L3.52 12 6 9.52V6h3.52L12 3.52 14.48 6H18v3.52L20.48 12 18 14.48z" />
+            </svg>
+        </button>
+        {% endif %}
+        {% endif %}
+        {{ content }}
+        {% if site.scripts != false %}
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js" integrity="sha256-1eSvllkLdrfxD6G8RGF9h+mQuD93Af5+GdPBMNc7uMQ=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/material-components-web/2.1.1/material-components-web.min.js" integrity="sha256-hx+OuLXG17rlfYtQfl7Iv5D4cvRnZTFTGVChG0QIk3Q=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
+        <script>
+        {% include index.js %}
+        </script>
+        {% endif %}
+    </main>
+</body>
+
 </html>

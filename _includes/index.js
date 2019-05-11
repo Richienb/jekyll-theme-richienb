@@ -2,6 +2,7 @@
 
 mdc.autoInit();
 
+{% if site.darktoggle != false %}
 Array.prototype.cycle = function(str) {
     var i = this.indexOf(str);
     if (i === -1) return undefined;
@@ -34,3 +35,4 @@ $(".theme-toggle").click(function() {
     localStorage.setItem("theme", ["auto", "light", "dark"].cycle(localStorage.getItem("theme")));
     handleTheme();
 });
+{% endif %}
