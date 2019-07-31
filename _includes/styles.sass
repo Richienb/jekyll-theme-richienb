@@ -117,18 +117,8 @@ body
         --mdc-theme-text-secondary-on-background: white
         --mdc-theme-text-icon-on-background: white
 
-        &::-webkit-scrollbar
             background-color: #424242
 
-        .main-content
-            color: white
-            background-color: #212121
-
-        .highlight, .highlighter-rouge
-            // Darken highlight background
-            background-color: #181818
-
-        blockquote, .mdc-select__selected-text, .mdc-text-field__input, .mdc-floating-label, #carbonads .carbon-text
             // Make blockquote, MDC Select text, MDC floating label and carbon ad text white
             color: white !important
 
@@ -663,8 +653,6 @@ td, th
     transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1), opacity 15ms linear 30ms, transform 270ms 0 cubic-bezier(0, 0, 0.2, 1), -webkit-transform 270ms 0 cubic-bezier(0, 0, 0.2, 1)
     background-color: #018786
     color: #fff
-
-    /* @alternate
     color: var(--mdc-theme-on-secondary, #fff)
 
     &:not(.mdc-fab--extended)
