@@ -1,199 +1,203 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500")
 
 @font-face
-  font-family: "Fira Code"
-  font-style: normal
-  font-weight: 400
-  src: local("Fira Code"), url("https://cdn.jsdelivr.net/npm/firacode@1.206.0/distr/woff2/FiraCode-Regular.woff2") format("woff2"), url("https://cdn.jsdelivr.net/npm/firacode@1.206.0/distr/woff/FiraCode-Regular.woff") format("woff"), url("https://cdn.jsdelivr.net/npm/firacode@1.206.0/distr/ttf/FiraCode-Regular.ttf") format("truetype"), url("https://cdn.jsdelivr.net/npm/firacode@1.206.0/distr/otf/FiraCode-Regular.otf") format("opentype"), url("https://cdn.jsdelivr.net/npm/firacode@1.206.0/distr/eot/FiraCode-Regular.eot") format("embedded-opentype")
+    font-family: "Fira Code"
+    font-style: normal
+    font-weight: 400
+    src: local("Fira Code"), url("https://cdn.jsdelivr.net/npm/firacode@1.206.0/distr/woff2/FiraCode-Regular.woff2") format("woff2"), url("https://cdn.jsdelivr.net/npm/firacode@1.206.0/distr/woff/FiraCode-Regular.woff") format("woff"), url("https://cdn.jsdelivr.net/npm/firacode@1.206.0/distr/ttf/FiraCode-Regular.ttf") format("truetype"), url("https://cdn.jsdelivr.net/npm/firacode@1.206.0/distr/otf/FiraCode-Regular.otf") format("opentype"), url("https://cdn.jsdelivr.net/npm/firacode@1.206.0/distr/eot/FiraCode-Regular.eot") format("embedded-opentype")
 
 body
-  // Setup MDC Theme
-  --mdc-theme-primary: {{ site.primarycolour | default: '#3F51B5' }}
-  --mdc-theme-secondary: {{ site.accentcolour | default: '#f44336' }}
+    // Setup MDC Theme
+    --mdc-theme-primary: {{ site.primarycolour | default: '#3F51B5' }}
+    --mdc-theme-secondary: {{ site.accentcolour | default: '#f44336' }}
 
-  // Set main background colour
-  background-color: #fafafa
+    // Set main background colour
+    background-color: #fafafa
 
-  .ribbon
-    // Setup main ribbon
-    top: 0
-    z-index: -1
-    background-color: var(--mdc-theme-primary, #6200ee)
-    width: 100%
-    height: 10rem
-    position: absolute
-
-  .main-content
-    // Setup main content
-    background-color: white
-    border-radius: 4px
-    margin: 1.5rem
-    padding: 2rem
-    min-height: calc(100vh - 7rem)
-
-    img
-      // Prevent image overflow
-      max-width: 100%
-
-    .mdc-button.mdc-button--raised
-      // Set MDC Raised Button colour to secondary
-      background-color: var(--mdc-theme-secondary, #018786)
-
-    .theme-toggle
-      // Setup toggle theme FAB
-      position: absolute
-      top: 0.5rem
-      right: 3rem
-
-    a
-      // Set default link colour
-      color: var(--mdc-theme-primary, #6200ee)
-
-    \::selection
-      // Set selection colour
-      background-color: var(--mdc-theme-primary, #6200ee)
-      color: white
-
-    #carbonads
-      // Setup carbonads element
-      margin-bottom: 1rem
-      float: right
-      border-radius: 6px
-      box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12)
-      font-family: Roboto, sans-serif
-      line-height: 28px
-      padding: 8px
-      box-sizing: border-box
-      transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1)
-
-      @media only screen and (max-width: 425px)
-        // If mobile-like screen width fill whole top bar
+    .ribbon
+        // Setup main ribbon
+        top: 0
+        z-index: -1
+        background-color: var(--mdc-theme-primary, #6200ee)
         width: 100%
-
-      &:hover
-        // If hovered increase shadow
-        box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12)
-
-      .carbon-wrap
-        .carbon-img > img
-          // Setup image in ad
-          margin-right: 9px
-          float: left
-
-          @media only screen and (max-width: 400px)
-            // If mobile-like screen width decrase ad size
-            width: auto
-            max-width: 130px
-            height: 50px
-
-        .carbon-text
-          // Setup ad text
-          color: #637381
-          font-weight: 300
-          display: block
-          font-size: 12px
-          line-height: 15.96px
-          margin-bottom: 0
-          margin-top: 8px
-          text-decoration: none
-
-      .carbon-poweredby
-        // Setup "Powered by carbon" text
-        color: #c5cdd0
-        font-size: 8px
-        font-weight: 500
-        line-height: 10px
-        text-transform: uppercase
-        text-decoration: none
-
-  .full-width
-    width: 100%
-
-{% if site.darktoggle != false %}
-  &.setting--dark
-    // When dark mode active
-    background-color: #212121 !important
-    --mdc-theme-text-primary-on-background: white
-    --mdc-theme-text-secondary-on-background: white
-    --mdc-theme-text-icon-on-background: white
-
-    .highlight, .highlighter-rouge
-      // Darken highlight background
-      background-color: #181818
-
-    hr
-      // Darken line colour
-      border-bottom-color: rgba(256, 256, 256, 0.12)
-
-    &::-webkit-scrollbar
-      background-color: #505050
+        height: 10rem
+        position: absolute
 
     .main-content
-      color: white
-      background-color: #303030
+        // Setup main content
+        background-color: white
+        border-radius: 4px
+        margin: 1.5rem
+        padding: 2rem
+        min-height: calc(100vh - 7rem)
 
-    blockquote, .mdc-select__selected-text, .mdc-text-field__input, .mdc-floating-label, #carbonads .carbon-text
-      // Make blockquote, MDC Select text, MDC floating label and carbon ad text white
-      color: white !important
+        img
+            // Prevent image overflow
+            max-width: 100%
 
-    .mdc-notched-outline__leading, .mdc-notched-outline__notch, .mdc-notched-outline__trailing
-      // Make MDC outline white
-      border-color: white !important
+        .mdc-button.mdc-button--raised
+            // Set MDC Raised Button colour to secondary
+            background-color: var(--mdc-theme-secondary, #018786)
 
-    a
-      // Lighten link colour
-      color: #5c6bc0
+        .theme-toggle
+            // Setup toggle theme FAB
+            position: absolute
+            top: 0.5rem
+            right: 3rem
 
-    \::selection
-      // Lighten selection colour
-      background-color: #c5cae9
-      color: black
+        a
+            // Set default link colour
+            color: var(--mdc-theme-primary, #6200ee)
+
+        \::selection
+            // Set selection colour
+            background-color: var(--mdc-theme-primary, #6200ee)
+            color: white
+
+        #carbonads
+            // Setup carbonads element
+            margin-bottom: 1rem
+            float: right
+            border-radius: 6px
+            box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12)
+            font-family: Roboto, sans-serif
+            line-height: 28px
+            padding: 8px
+            box-sizing: border-box
+            transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1)
+
+            @media only screen and (max-width: 425px)
+                // If mobile-like screen width fill whole top bar
+                width: 100%
+
+            &:hover
+                // If hovered increase shadow
+                box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12)
+
+            .carbon-wrap
+                .carbon-img > img
+                    // Setup image in ad
+                    margin-right: 9px
+                    float: left
+
+                    @media only screen and (max-width: 400px)
+                        // If mobile-like screen width decrase ad size
+                        width: auto
+                        max-width: 130px
+                        height: 50px
+
+                .carbon-text
+                    // Setup ad text
+                    color: #637381
+                    font-weight: 300
+                    display: block
+                    font-size: 12px
+                    line-height: 15.96px
+                    margin-bottom: 0
+                    margin-top: 8px
+                    text-decoration: none
+
+            .carbon-poweredby
+                // Setup "Powered by carbon" text
+                color: #c5cdd0
+                font-size: 8px
+                font-weight: 500
+                line-height: 10px
+                text-transform: uppercase
+                text-decoration: none
+
+    .full-width
+        width: 100%
+
+    {% if site.darktoggle != false %}
+    &.setting--dark
+        // When dark mode active
+        background-color: #121212 !important
+        --mdc-theme-text-primary-on-background: white
+        --mdc-theme-text-secondary-on-background: white
+        --mdc-theme-text-icon-on-background: white
+
+        &::-webkit-scrollbar
+            background-color: #424242
+
+        .main-content
+            color: white
+            background-color: #212121
+
+        .highlight, .highlighter-rouge
+            // Darken highlight background
+            background-color: #181818
+
+        blockquote, .mdc-select__selected-text, .mdc-text-field__input, .mdc-floating-label, #carbonads .carbon-text
+            // Make blockquote, MDC Select text, MDC floating label and carbon ad text white
+            color: white !important
+
+        hr
+            // Darken line colour
+            border-bottom-color: rgba(256, 256, 256, 0.12)
+
+        .mdc-select__selected-text, .mdc-text-field__input, .mdc-floating-label, #carbonads .carbon-text
+            // Make MDC Select text, MDC floating label and carbon ad text white
+            color: white !important
+
+        .mdc-notched-outline__leading, .mdc-notched-outline__notch, .mdc-notched-outline__trailing
+            // Make MDC outline white
+            border-color: white !important
+
+        a
+            // Lighten link colour
+            color: #5c6bc0
+
+        ::selection
+            // Lighten selection colour
+            background-color: #c5cae9
+            color: black
 
 {% endif %}
-  &.setting--animate-colours
-    // Animate background colours changing
-    transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1)
+    &.setting--animate-colours
+        // Animate background colours changing
+        transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1)
 
-    .main-content, a, ::selection, .main-content > .highlight
-      // Animate background and foreground colours changing
-      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1)
-      transition-property: background-color, color
+        .main-content, a, ::selection, .main-content > .highlight
+            // Animate background and foreground colours changing
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1)
+            transition-property: background-color, color
 
 body, .highlight
-  &::-webkit-scrollbar
-    // Setup main scrollbar
-    border-radius: 100px
-    background-color: transparent
-    width: 8px
-    height: 8px
+    &::-webkit-scrollbar
+        // Setup main scrollbar
+        border-radius: 100px
+        background-color: transparent
+        width: 8px
+        height: 8px
 
-    &-button
-      // Setup scrollbar up and down buttons
-      height: 0
-      width: 0
+        &-button
+            // Setup scrollbar up and down buttons
+            height: 0
+            width: 0
 
-    &-corner
-      // Setup corner of scrollbar
-      background-color: transparent
+        &-corner
+            // Setup corner of scrollbar
+            background-color: transparent
 
-    &-thumb
-      // Setup scrollbar thumb
-      border-radius: 100px
-      background-color: rgba(0, 0, 0, 0.2)
-      min-height: 28px
+        &-thumb
+            // Setup scrollbar thumb
+            border-radius: 100px
+            background-color: rgba(0, 0, 0, 0.2)
+            min-height: 28px
 
-      &:hover
-        // Darken if hovered
-        background-color: rgba(0, 0, 0, 0.4)
+            &:hover
+                // Darken if hovered
+                background-color: rgba(0, 0, 0, 0.4)
 
-      &:active
-        // Darken even more if clicked
-        background-color: rgba(0, 0, 0, 0.5)
+            &:active
+                // Darken even more if clicked
+                background-color: rgba(0, 0, 0, 0.5)
 
-    &-track
-      // Setup bar for scrollbar
-      background-clip: padding-box
-      border-width: 0 0 0 4px
+        &-track
+            // Setup bar for scrollbar
+            background-clip: padding-box
+            border-width: 0 0 0 4px
 
 // Operators
 $codehilite-operator: inherit
@@ -277,216 +281,216 @@ $codehilite-whitespace: transparent
 
 // Codehilite extension
 .highlight
-  // Operators
-  .o
-    color: $codehilite-operator
+    // Operators
+    .o
+        color: $codehilite-operator
 
-  .ow
-    color: $codehilite-operator-word
+    .ow
+        color: $codehilite-operator-word
 
-  // Generics
-  .ge
-    color: $codehilite-generic-emph
+    // Generics
+    .ge
+        color: $codehilite-generic-emph
 
-  .gr
-    color: $codehilite-generic-error
+    .gr
+        color: $codehilite-generic-error
 
-  .gh
-    color: $codehilite-generic-heading
+    .gh
+        color: $codehilite-generic-heading
 
-  .go
-    color: $codehilite-generic-output
+    .go
+        color: $codehilite-generic-output
 
-  .gp
-    color: $codehilite-generic-prompt
+    .gp
+        color: $codehilite-generic-prompt
 
-  .gs
-    color: $codehilite-generic-strong
+    .gs
+        color: $codehilite-generic-strong
 
-  .gu
-    color: $codehilite-generic-subheading
+    .gu
+        color: $codehilite-generic-subheading
 
-  .gt
-    color: $codehilite-generic-traceback
+    .gt
+        color: $codehilite-generic-traceback
 
-  // Diffs
-  .gd
-    background-color: $codehilite-diff-deleted
+    // Diffs
+    .gd
+        background-color: $codehilite-diff-deleted
 
-  .gi
-    background-color: $codehilite-diff-inserted
+    .gi
+        background-color: $codehilite-diff-inserted
 
-  // Keywords
-  .k
-    color: $codehilite-keyword
+    // Keywords
+    .k
+        color: $codehilite-keyword
 
-  .kc
-    color: $codehilite-keyword-constant
+    .kc
+        color: $codehilite-keyword-constant
 
-  .kd
-    color: $codehilite-keyword-declaration
+    .kd
+        color: $codehilite-keyword-declaration
 
-  .kn
-    color: $codehilite-keyword-namespace
+    .kn
+        color: $codehilite-keyword-namespace
 
-  .kp
-    color: $codehilite-keyword-pseudo
+    .kp
+        color: $codehilite-keyword-pseudo
 
-  .kr
-    color: $codehilite-keyword-reserved
+    .kr
+        color: $codehilite-keyword-reserved
 
-  .kt
-    color: $codehilite-keyword-type
+    .kt
+        color: $codehilite-keyword-type
 
-  // Comments
-  .c
-    color: $codehilite-comment
+    // Comments
+    .c
+        color: $codehilite-comment
 
-  .cm
-    color: $codehilite-comment-multiline
+    .cm
+        color: $codehilite-comment-multiline
 
-  .cp
-    color: $codehilite-comment-preproc
+    .cp
+        color: $codehilite-comment-preproc
 
-  .c1
-    color: $codehilite-comment-single
+    .c1
+        color: $codehilite-comment-single
 
-  .ch
-    color: $codehilite-comment-shebang
+    .ch
+        color: $codehilite-comment-shebang
 
-  .cs
-    color: $codehilite-comment-special
+    .cs
+        color: $codehilite-comment-special
 
-  // Names
-  .na
-    color: $codehilite-name-attribute
+    // Names
+    .na
+        color: $codehilite-name-attribute
 
-  .nb
-    color: $codehilite-name-builtin
+    .nb
+        color: $codehilite-name-builtin
 
-  .bp
-    color: $codehilite-name-builtin-pseudo
+    .bp
+        color: $codehilite-name-builtin-pseudo
 
-  .nc
-    color: $codehilite-name-class
+    .nc
+        color: $codehilite-name-class
 
-  .no
-    color: $codehilite-name-constant
+    .no
+        color: $codehilite-name-constant
 
-  .nd
-    color: $codehilite-name-entity
+    .nd
+        color: $codehilite-name-entity
 
-  .ni
-    color: $codehilite-name-entity
+    .ni
+        color: $codehilite-name-entity
 
-  .ne
-    color: $codehilite-name-exception
+    .ne
+        color: $codehilite-name-exception
 
-  .nf
-    color: $codehilite-name-function
+    .nf
+        color: $codehilite-name-function
 
-  .nl
-    color: $codehilite-name-label
+    .nl
+        color: $codehilite-name-label
 
-  .nn
-    color: $codehilite-name-namespace
+    .nn
+        color: $codehilite-name-namespace
 
-  .nt
-    color: $codehilite-name-tag
+    .nt
+        color: $codehilite-name-tag
 
-  .nv
-    color: $codehilite-name-variable
+    .nv
+        color: $codehilite-name-variable
 
-  .vc
-    color: $codehilite-name-variable-class
+    .vc
+        color: $codehilite-name-variable-class
 
-  .vg
-    color: $codehilite-name-variable-global
+    .vg
+        color: $codehilite-name-variable-global
 
-  .vi
-    color: $codehilite-name-variable-instance
+    .vi
+        color: $codehilite-name-variable-instance
 
-  .nx
-    color: $codehilite-name-extension
+    .nx
+        color: $codehilite-name-extension
 
-  // Numbers
-  .m
-    color: $codehilite-literal-number
+    // Numbers
+    .m
+        color: $codehilite-literal-number
 
-  .mf
-    color: $codehilite-literal-number-float
+    .mf
+        color: $codehilite-literal-number-float
 
-  .mh
-    color: $codehilite-literal-number-hex
+    .mh
+        color: $codehilite-literal-number-hex
 
-  .mi
-    color: $codehilite-literal-number-integer
+    .mi
+        color: $codehilite-literal-number-integer
 
-  .il
-    color: $codehilite-literal-number-integer-long
+    .il
+        color: $codehilite-literal-number-integer-long
 
-  .mo
-    color: $codehilite-literal-number-oct
+    .mo
+        color: $codehilite-literal-number-oct
 
-  // Strings
-  .s
-    color: $codehilite-literal-string
+    // Strings
+    .s
+        color: $codehilite-literal-string
 
-  .sb
-    color: $codehilite-literal-string-backticks
+    .sb
+        color: $codehilite-literal-string-backticks
 
-  .sc
-    color: $codehilite-literal-string-char
+    .sc
+        color: $codehilite-literal-string-char
 
-  .sd
-    color: $codehilite-literal-string-doc
+    .sd
+        color: $codehilite-literal-string-doc
 
-  .s2
-    color: $codehilite-literal-string-double
+    .s2
+        color: $codehilite-literal-string-double
 
-  .se
-    color: $codehilite-literal-string-escape
+    .se
+        color: $codehilite-literal-string-escape
 
-  .sh
-    color: $codehilite-literal-string-heredoc
+    .sh
+        color: $codehilite-literal-string-heredoc
 
-  .si
-    color: $codehilite-literal-string-interpol
+    .si
+        color: $codehilite-literal-string-interpol
 
-  .sx
-    color: $codehilite-literal-string-other
+    .sx
+        color: $codehilite-literal-string-other
 
-  .sr
-    color: $codehilite-literal-string-regex
+    .sr
+        color: $codehilite-literal-string-regex
 
-  .s1
-    color: $codehilite-literal-string-single
+    .s1
+        color: $codehilite-literal-string-single
 
-  .ss
-    color: $codehilite-literal-string-symbol
+    .ss
+        color: $codehilite-literal-string-symbol
 
-  // Miscellaneous
-  .err
-    color: $codehilite-error
+    // Miscellaneous
+    .err
+        color: $codehilite-error
 
-  .w
-    color: $codehilite-whitespace
+    .w
+        color: $codehilite-whitespace
 
-  border-radius: 4px
-  padding: 12px
-  line-height: 1.4
-  overflow: auto
+    border-radius: 4px
+    padding: 12px
+    line-height: 1.4
+    overflow: auto
 
 pre.highlight
-  margin: 0
+    margin: 0
 
 .highlighter-rouge
-  padding: 2px
-  border-radius: 2px
+    padding: 2px
+    border-radius: 2px
 
 .highlight, .highlighter-rouge
-  background-color: #eeeeee
-  font-family: "Fira Code"
+    background-color: #eeeeee
+    font-family: "Fira Code"
 
 /*!
  * Material Components for the Web
@@ -494,453 +498,453 @@ pre.highlight
  * License: MIT
 
 .mdc-typography
-  font-family: Roboto, sans-serif
-  -moz-osx-font-smoothing: grayscale
-  -webkit-font-smoothing: antialiased
+    font-family: Roboto, sans-serif
+    -moz-osx-font-smoothing: grayscale
+    -webkit-font-smoothing: antialiased
 
 h1
-  font-family: Roboto, sans-serif
-  -moz-osx-font-smoothing: grayscale
-  -webkit-font-smoothing: antialiased
-  font-size: 3.75rem
-  line-height: 3.75rem
-  font-weight: 300
-  letter-spacing: -0.0083333333em
-  text-decoration: inherit
-  text-transform: inherit
+    font-family: Roboto, sans-serif
+    -moz-osx-font-smoothing: grayscale
+    -webkit-font-smoothing: antialiased
+    font-size: 3.75rem
+    line-height: 3.75rem
+    font-weight: 300
+    letter-spacing: -0.0083333333em
+    text-decoration: inherit
+    text-transform: inherit
 
 h2
-  font-family: Roboto, sans-serif
-  -moz-osx-font-smoothing: grayscale
-  -webkit-font-smoothing: antialiased
-  font-size: 3rem
-  line-height: 3.125rem
-  font-weight: 400
-  letter-spacing: normal
-  text-decoration: inherit
-  text-transform: inherit
+    font-family: Roboto, sans-serif
+    -moz-osx-font-smoothing: grayscale
+    -webkit-font-smoothing: antialiased
+    font-size: 3rem
+    line-height: 3.125rem
+    font-weight: 400
+    letter-spacing: normal
+    text-decoration: inherit
+    text-transform: inherit
 
 h3
-  font-family: Roboto, sans-serif
-  -moz-osx-font-smoothing: grayscale
-  -webkit-font-smoothing: antialiased
-  font-size: 2.125rem
-  line-height: 2.5rem
-  font-weight: 400
-  letter-spacing: 0.0073529412em
-  text-decoration: inherit
-  text-transform: inherit
+    font-family: Roboto, sans-serif
+    -moz-osx-font-smoothing: grayscale
+    -webkit-font-smoothing: antialiased
+    font-size: 2.125rem
+    line-height: 2.5rem
+    font-weight: 400
+    letter-spacing: 0.0073529412em
+    text-decoration: inherit
+    text-transform: inherit
 
 h4
-  font-family: Roboto, sans-serif
-  -moz-osx-font-smoothing: grayscale
-  -webkit-font-smoothing: antialiased
-  font-size: 1.5rem
-  line-height: 2rem
-  font-weight: 400
-  letter-spacing: normal
-  text-decoration: inherit
-  text-transform: inherit
+    font-family: Roboto, sans-serif
+    -moz-osx-font-smoothing: grayscale
+    -webkit-font-smoothing: antialiased
+    font-size: 1.5rem
+    line-height: 2rem
+    font-weight: 400
+    letter-spacing: normal
+    text-decoration: inherit
+    text-transform: inherit
 
 h5
-  font-family: Roboto, sans-serif
-  -moz-osx-font-smoothing: grayscale
-  -webkit-font-smoothing: antialiased
-  font-size: 1.25rem
-  line-height: 2rem
-  font-weight: 500
-  letter-spacing: 0.0125em
-  text-decoration: inherit
-  text-transform: inherit
+    font-family: Roboto, sans-serif
+    -moz-osx-font-smoothing: grayscale
+    -webkit-font-smoothing: antialiased
+    font-size: 1.25rem
+    line-height: 2rem
+    font-weight: 500
+    letter-spacing: 0.0125em
+    text-decoration: inherit
+    text-transform: inherit
 
 h6, th
-  font-family: Roboto, sans-serif
-  -moz-osx-font-smoothing: grayscale
-  -webkit-font-smoothing: antialiased
-  font-size: 1.1rem
-  line-height: 2rem
-  font-weight: 500
-  letter-spacing: 0.015em
-  text-decoration: inherit
-  text-transform: inherit
+    font-family: Roboto, sans-serif
+    -moz-osx-font-smoothing: grayscale
+    -webkit-font-smoothing: antialiased
+    font-size: 1.1rem
+    line-height: 2rem
+    font-weight: 500
+    letter-spacing: 0.015em
+    text-decoration: inherit
+    text-transform: inherit
 
 dd,
 dt,
 li
-  font-family: Roboto, sans-serif
-  -moz-osx-font-smoothing: grayscale
-  -webkit-font-smoothing: antialiased
-  font-size: 1rem
-  line-height: 1.75rem
-  font-weight: 400
-  letter-spacing: 0.009375em
-  text-decoration: inherit
-  text-transform: inherit
+    font-family: Roboto, sans-serif
+    -moz-osx-font-smoothing: grayscale
+    -webkit-font-smoothing: antialiased
+    font-size: 1rem
+    line-height: 1.75rem
+    font-weight: 400
+    letter-spacing: 0.009375em
+    text-decoration: inherit
+    text-transform: inherit
 
 p
-  font-family: Roboto, sans-serif
-  -moz-osx-font-smoothing: grayscale
-  -webkit-font-smoothing: antialiased
-  font-size: 1rem
-  line-height: 1.5rem
-  font-weight: 400
-  letter-spacing: 0.03125em
-  text-decoration: inherit
-  text-transform: inherit
+    font-family: Roboto, sans-serif
+    -moz-osx-font-smoothing: grayscale
+    -webkit-font-smoothing: antialiased
+    font-size: 1rem
+    line-height: 1.5rem
+    font-weight: 400
+    letter-spacing: 0.03125em
+    text-decoration: inherit
+    text-transform: inherit
 
 blockquote
-  border-left: 0.25em solid #C5CAE9
-  color: #6a737d
-  padding: 0 1em
-  margin-left: 0
+    border-left: 0.25em solid #C5CAE9
+    color: #6a737d
+    padding: 0 1em
+    margin-left: 0
 
 hr
-  margin: 3px 0 4px 0
-  border-top: 0
-  border-left: 0
-  border-bottom-color: rgba(0, 0, 0, 0.12)
-  border-bottom-width: 1px
-  border-bottom-style: solid
+    margin: 3px 0 4px 0
+    border-top: 0
+    border-left: 0
+    border-bottom-color: rgba(0, 0, 0, 0.12)
+    border-bottom-width: 1px
+    border-bottom-style: solid
 
 li
-  padding: 8px
+    padding: 8px
 
 table, th, td
-  border: none
+    border: none
 
 table
-  width: 100%
-  display: table
-  border-collapse: collapse
-  border-spacing: 0
+    width: 100%
+    display: table
+    border-collapse: collapse
+    border-spacing: 0
 
-  > tbody > tr
-    transition: background-color 0.25s ease
+    > tbody > tr
+        transition: background-color 0.25s ease
 
-    &:hover
-      background-color: rgba(242, 242, 242, 0.5)
+        &:hover
+            background-color: rgba(242, 242, 242, 0.5)
 
 tr
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12)
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12)
 
 td, th
-  padding: 15px 5px
-  display: table-cell
-  text-align: left
-  vertical-align: middle
-  border-radius: 2px
+    padding: 15px 5px
+    display: table-cell
+    text-align: left
+    vertical-align: middle
+    border-radius: 2px
 
 /*!
  *Material Components for the Web
  *Copyright (c) 2019 Google Inc.
  *License: MIT
 .mdc-fab
-  box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12)
-  display: inline-flex
-  position: relative
-  align-items: center
-  justify-content: center
-  box-sizing: border-box
-  width: 56px
-  height: 56px
-  padding: 0
-  border: none
-  fill: currentColor
-  cursor: pointer
-  -webkit-user-select: none
-  -moz-user-select: none
-  -ms-user-select: none
-  user-select: none
-  -moz-appearance: none
-  -webkit-appearance: none
-  overflow: hidden
-  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1), opacity 15ms linear 30ms, -webkit-transform 270ms 0 cubic-bezier(0, 0, 0.2, 1)
-  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1), opacity 15ms linear 30ms, transform 270ms 0 cubic-bezier(0, 0, 0.2, 1)
-  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1), opacity 15ms linear 30ms, transform 270ms 0 cubic-bezier(0, 0, 0.2, 1), -webkit-transform 270ms 0 cubic-bezier(0, 0, 0.2, 1)
-  background-color: #018786
-  color: #fff
-
-  /* @alternate
-  color: var(--mdc-theme-on-secondary, #fff)
-
-  &:not(.mdc-fab--extended)
-    border-radius: 50%
-
-  &::-moz-focus-inner
+    box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12)
+    display: inline-flex
+    position: relative
+    align-items: center
+    justify-content: center
+    box-sizing: border-box
+    width: 56px
+    height: 56px
     padding: 0
-    border: 0
-
-  &:focus,
-  &:hover
-    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12)
-
-  &:active
-    box-shadow: 0 7px 8px -4px rgba(0, 0, 0, 0.2), 0 12px 17px 2px rgba(0, 0, 0, 0.14), 0 5px 22px 4px rgba(0, 0, 0, 0.12)
-    outline: none
-
-  &:focus
-    outline: none
-
-  &:hover
+    border: none
+    fill: currentColor
     cursor: pointer
+    -webkit-user-select: none
+    -moz-user-select: none
+    -ms-user-select: none
+    user-select: none
+    -moz-appearance: none
+    -webkit-appearance: none
+    overflow: hidden
+    transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1), opacity 15ms linear 30ms, -webkit-transform 270ms 0 cubic-bezier(0, 0, 0.2, 1)
+    transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1), opacity 15ms linear 30ms, transform 270ms 0 cubic-bezier(0, 0, 0.2, 1)
+    transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1), opacity 15ms linear 30ms, transform 270ms 0 cubic-bezier(0, 0, 0.2, 1), -webkit-transform 270ms 0 cubic-bezier(0, 0, 0.2, 1)
+    background-color: #018786
+    color: #fff
 
-  > svg
-    width: 100%
+    /* @alternate
+    color: var(--mdc-theme-on-secondary, #fff)
 
-  .mdc-fab__icon
-    width: 24px
-    height: 24px
-    font-size: 24px
+    &:not(.mdc-fab--extended)
+        border-radius: 50%
+
+    &::-moz-focus-inner
+        padding: 0
+        border: 0
+
+    &:focus,
+    &:hover
+        box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12)
+
+    &:active
+        box-shadow: 0 7px 8px -4px rgba(0, 0, 0, 0.2), 0 12px 17px 2px rgba(0, 0, 0, 0.14), 0 5px 22px 4px rgba(0, 0, 0, 0.12)
+        outline: none
+
+    &:focus
+        outline: none
+
+    &:hover
+        cursor: pointer
+
+    > svg
+        width: 100%
+
+    .mdc-fab__icon
+        width: 24px
+        height: 24px
+        font-size: 24px
 
 @supports not (-ms-ime-align: auto)
-  .mdc-fab
-    /* @alternate
-    background-color: var(--mdc-theme-secondary, #018786)
+    .mdc-fab
+        /* @alternate
+        background-color: var(--mdc-theme-secondary, #018786)
 
 .mdc-fab--mini
-  width: 40px
-  height: 40px
+    width: 40px
+    height: 40px
 
 .mdc-fab--extended
-  font-family: Roboto, sans-serif
-  -moz-osx-font-smoothing: grayscale
-  -webkit-font-smoothing: antialiased
-  font-size: 0.875rem
-  line-height: 2.25rem
-  font-weight: 500
-  letter-spacing: 0.0892857143em
-  text-decoration: none
-  text-transform: uppercase
-  border-radius: 24px
-  padding: 0 20px
-  width: auto
-  max-width: 100%
-  height: 48px
+    font-family: Roboto, sans-serif
+    -moz-osx-font-smoothing: grayscale
+    -webkit-font-smoothing: antialiased
+    font-size: 0.875rem
+    line-height: 2.25rem
+    font-weight: 500
+    letter-spacing: 0.0892857143em
+    text-decoration: none
+    text-transform: uppercase
+    border-radius: 24px
+    padding: 0 20px
+    width: auto
+    max-width: 100%
+    height: 48px
 
-  .mdc-fab__icon
-    /* @noflip
-    margin-left: -8px
+    .mdc-fab__icon
+        /* @noflip
+        margin-left: -8px
 
-    /* @noflip
-    margin-right: 12px
+        /* @noflip
+        margin-right: 12px
 
 [dir=rtl] .mdc-fab--extended .mdc-fab__icon
-  /* @noflip
-  margin-left: 12px
-
-  /* @noflip
-  margin-right: -8px
-
-.mdc-fab--extended
-  .mdc-fab__icon[dir=rtl],
-  .mdc-fab__label + .mdc-fab__icon
     /* @noflip
     margin-left: 12px
 
     /* @noflip
     margin-right: -8px
 
+.mdc-fab--extended
+    .mdc-fab__icon[dir=rtl],
+    .mdc-fab__label + .mdc-fab__icon
+        /* @noflip
+        margin-left: 12px
+
+        /* @noflip
+        margin-right: -8px
+
 .mdc-fab--extended .mdc-fab__label + .mdc-fab__icon[dir=rtl],
 [dir=rtl] .mdc-fab--extended .mdc-fab__label + .mdc-fab__icon
-  /* @noflip
-  margin-left: -8px
+    /* @noflip
+    margin-left: -8px
 
-  /* @noflip
-  margin-right: 12px
+    /* @noflip
+    margin-right: 12px
 
 .mdc-fab__label
-  justify-content: flex-start
-  text-overflow: ellipsis
-  white-space: nowrap
-  overflow: hidden
+    justify-content: flex-start
+    text-overflow: ellipsis
+    white-space: nowrap
+    overflow: hidden
 
 .mdc-fab__icon
-  transition: -webkit-transform 180ms 90ms cubic-bezier(0, 0, 0.2, 1)
-  transition: transform 180ms 90ms cubic-bezier(0, 0, 0.2, 1)
-  transition: transform 180ms 90ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 180ms 90ms cubic-bezier(0, 0, 0.2, 1)
-  fill: currentColor
-  will-change: transform
+    transition: -webkit-transform 180ms 90ms cubic-bezier(0, 0, 0.2, 1)
+    transition: transform 180ms 90ms cubic-bezier(0, 0, 0.2, 1)
+    transition: transform 180ms 90ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 180ms 90ms cubic-bezier(0, 0, 0.2, 1)
+    fill: currentColor
+    will-change: transform
 
 .mdc-fab .mdc-fab__icon
-  display: inline-flex
-  align-items: center
-  justify-content: center
+    display: inline-flex
+    align-items: center
+    justify-content: center
 
 .mdc-fab--exited
-  -webkit-transform: scale(0)
-  transform: scale(0)
-  opacity: 0
-  transition: opacity 15ms linear 150ms, -webkit-transform 180ms 0 cubic-bezier(0.4, 0, 1, 1)
-  transition: opacity 15ms linear 150ms, transform 180ms 0 cubic-bezier(0.4, 0, 1, 1)
-  transition: opacity 15ms linear 150ms, transform 180ms 0 cubic-bezier(0.4, 0, 1, 1), -webkit-transform 180ms 0 cubic-bezier(0.4, 0, 1, 1)
-
-  .mdc-fab__icon
     -webkit-transform: scale(0)
     transform: scale(0)
-    transition: -webkit-transform 135ms 0 cubic-bezier(0.4, 0, 1, 1)
-    transition: transform 135ms 0 cubic-bezier(0.4, 0, 1, 1)
-    transition: transform 135ms 0 cubic-bezier(0.4, 0, 1, 1), -webkit-transform 135ms 0 cubic-bezier(0.4, 0, 1, 1)
+    opacity: 0
+    transition: opacity 15ms linear 150ms, -webkit-transform 180ms 0 cubic-bezier(0.4, 0, 1, 1)
+    transition: opacity 15ms linear 150ms, transform 180ms 0 cubic-bezier(0.4, 0, 1, 1)
+    transition: opacity 15ms linear 150ms, transform 180ms 0 cubic-bezier(0.4, 0, 1, 1), -webkit-transform 180ms 0 cubic-bezier(0.4, 0, 1, 1)
+
+    .mdc-fab__icon
+        -webkit-transform: scale(0)
+        transform: scale(0)
+        transition: -webkit-transform 135ms 0 cubic-bezier(0.4, 0, 1, 1)
+        transition: transform 135ms 0 cubic-bezier(0.4, 0, 1, 1)
+        transition: transform 135ms 0 cubic-bezier(0.4, 0, 1, 1), -webkit-transform 135ms 0 cubic-bezier(0.4, 0, 1, 1)
 
 @-webkit-keyframes mdc-ripple-fg-radius-in
-  from
-    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1)
-    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1)
-    -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1)
-    transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1)
+    from
+        -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1)
+        animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1)
+        -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1)
+        transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1)
 
-  to
-    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1))
-    transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1))
+    to
+        -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1))
+        transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1))
 
 @keyframes mdc-ripple-fg-radius-in
-  from
-    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1)
-    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1)
-    -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1)
-    transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1)
+    from
+        -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1)
+        animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1)
+        -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1)
+        transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1)
 
-  to
-    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1))
-    transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1))
+    to
+        -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1))
+        transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1))
 
 @-webkit-keyframes mdc-ripple-fg-opacity-in
-  from
-    -webkit-animation-timing-function: linear
-    animation-timing-function: linear
-    opacity: 0
+    from
+        -webkit-animation-timing-function: linear
+        animation-timing-function: linear
+        opacity: 0
 
-  to
-    opacity: var(--mdc-ripple-fg-opacity, 0)
+    to
+        opacity: var(--mdc-ripple-fg-opacity, 0)
 
 @keyframes mdc-ripple-fg-opacity-in
-  from
-    -webkit-animation-timing-function: linear
-    animation-timing-function: linear
-    opacity: 0
+    from
+        -webkit-animation-timing-function: linear
+        animation-timing-function: linear
+        opacity: 0
 
-  to
-    opacity: var(--mdc-ripple-fg-opacity, 0)
+    to
+        opacity: var(--mdc-ripple-fg-opacity, 0)
 
 @-webkit-keyframes mdc-ripple-fg-opacity-out
-  from
-    -webkit-animation-timing-function: linear
-    animation-timing-function: linear
-    opacity: var(--mdc-ripple-fg-opacity, 0)
+    from
+        -webkit-animation-timing-function: linear
+        animation-timing-function: linear
+        opacity: var(--mdc-ripple-fg-opacity, 0)
 
-  to
-    opacity: 0
+    to
+        opacity: 0
 
 @keyframes mdc-ripple-fg-opacity-out
-  from
-    -webkit-animation-timing-function: linear
-    animation-timing-function: linear
-    opacity: var(--mdc-ripple-fg-opacity, 0)
+    from
+        -webkit-animation-timing-function: linear
+        animation-timing-function: linear
+        opacity: var(--mdc-ripple-fg-opacity, 0)
 
-  to
-    opacity: 0
+    to
+        opacity: 0
 
 .mdc-ripple-surface--test-edge-var-bug
-  --mdc-ripple-surface-test-edge-var: 1px solid #000
-  visibility: hidden
+    --mdc-ripple-surface-test-edge-var: 1px solid #000
+    visibility: hidden
 
-  &::before
-    border: var(--mdc-ripple-surface-test-edge-var)
+    &::before
+        border: var(--mdc-ripple-surface-test-edge-var)
 
 .mdc-fab
-  --mdc-ripple-fg-size: 0
-  --mdc-ripple-left: 0
-  --mdc-ripple-top: 0
-  --mdc-ripple-fg-scale: 1
-  --mdc-ripple-fg-translate-end: 0
-  --mdc-ripple-fg-translate-start: 0
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
-  will-change: transform, opacity
+    --mdc-ripple-fg-size: 0
+    --mdc-ripple-left: 0
+    --mdc-ripple-top: 0
+    --mdc-ripple-fg-scale: 1
+    --mdc-ripple-fg-translate-end: 0
+    --mdc-ripple-fg-translate-start: 0
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+    will-change: transform, opacity
 
-  &::after,
-  &::before
-    position: absolute
-    border-radius: 50%
-    opacity: 0
-    pointer-events: none
-    content: ""
-
-  &::before
-    transition: opacity 15ms linear, background-color 15ms linear
-    z-index: 1
-
-  &.mdc-ripple-upgraded
-    &::before
-      -webkit-transform: scale(var(--mdc-ripple-fg-scale, 1))
-      transform: scale(var(--mdc-ripple-fg-scale, 1))
-
-    &::after
-      top: 0
-
-      /* @noflip
-      left: 0
-      -webkit-transform: scale(0)
-      transform: scale(0)
-      -webkit-transform-origin: center center
-      transform-origin: center center
-
-  &.mdc-ripple-upgraded--unbounded::after
-    top: var(--mdc-ripple-top, 0)
-
-    /* @noflip
-    left: var(--mdc-ripple-left, 0)
-
-  &.mdc-ripple-upgraded--foreground-activation::after
-    -webkit-animation: mdc-ripple-fg-radius-in 225ms forwards, mdc-ripple-fg-opacity-in 75ms forwards
-    animation: mdc-ripple-fg-radius-in 225ms forwards, mdc-ripple-fg-opacity-in 75ms forwards
-
-  &.mdc-ripple-upgraded--foreground-deactivation::after
-    -webkit-animation: mdc-ripple-fg-opacity-out 150ms
-    animation: mdc-ripple-fg-opacity-out 150ms
-    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1))
-    transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1))
-
-  &::after,
-  &::before
-    top: calc(50% - 100%)
-
-    /* @noflip
-    left: calc(50% - 100%)
-    width: 200%
-    height: 200%
-
-  &.mdc-ripple-upgraded::after
-    width: var(--mdc-ripple-fg-size, 100%)
-    height: var(--mdc-ripple-fg-size, 100%)
-
-  &::after,
-  &::before
-    background-color: #fff
-
-  &:hover::before
-    opacity: 0.08
-
-  &.mdc-ripple-upgraded--background-focused::before,
-  &:not(.mdc-ripple-upgraded):focus::before
-    transition-duration: 75ms
-    opacity: 0.24
-
-  &:not(.mdc-ripple-upgraded)
-    &::after
-      transition: opacity 150ms linear
-
-    &:active::after
-      transition-duration: 75ms
-      opacity: 0.24
-
-  &.mdc-ripple-upgraded
-    --mdc-ripple-fg-opacity: 0.24
-
-@supports not (-ms-ime-align: auto)
-  .mdc-fab
     &::after,
     &::before
-      /* @alternate
-      background-color: var(--mdc-theme-on-secondary, #fff)
+        position: absolute
+        border-radius: 50%
+        opacity: 0
+        pointer-events: none
+        content: ""
+
+    &::before
+        transition: opacity 15ms linear, background-color 15ms linear
+        z-index: 1
+
+    &.mdc-ripple-upgraded
+        &::before
+            -webkit-transform: scale(var(--mdc-ripple-fg-scale, 1))
+            transform: scale(var(--mdc-ripple-fg-scale, 1))
+
+        &::after
+            top: 0
+
+            /* @noflip
+            left: 0
+            -webkit-transform: scale(0)
+            transform: scale(0)
+            -webkit-transform-origin: center center
+            transform-origin: center center
+
+    &.mdc-ripple-upgraded--unbounded::after
+        top: var(--mdc-ripple-top, 0)
+
+        /* @noflip
+        left: var(--mdc-ripple-left, 0)
+
+    &.mdc-ripple-upgraded--foreground-activation::after
+        -webkit-animation: mdc-ripple-fg-radius-in 225ms forwards, mdc-ripple-fg-opacity-in 75ms forwards
+        animation: mdc-ripple-fg-radius-in 225ms forwards, mdc-ripple-fg-opacity-in 75ms forwards
+
+    &.mdc-ripple-upgraded--foreground-deactivation::after
+        -webkit-animation: mdc-ripple-fg-opacity-out 150ms
+        animation: mdc-ripple-fg-opacity-out 150ms
+        -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1))
+        transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1))
+
+    &::after,
+    &::before
+        top: calc(50% - 100%)
+
+        /* @noflip
+        left: calc(50% - 100%)
+        width: 200%
+        height: 200%
+
+    &.mdc-ripple-upgraded::after
+        width: var(--mdc-ripple-fg-size, 100%)
+        height: var(--mdc-ripple-fg-size, 100%)
+
+    &::after,
+    &::before
+        background-color: #fff
+
+    &:hover::before
+        opacity: 0.08
+
+    &.mdc-ripple-upgraded--background-focused::before,
+    &:not(.mdc-ripple-upgraded):focus::before
+        transition-duration: 75ms
+        opacity: 0.24
+
+    &:not(.mdc-ripple-upgraded)
+        &::after
+            transition: opacity 150ms linear
+
+        &:active::after
+            transition-duration: 75ms
+            opacity: 0.24
+
+    &.mdc-ripple-upgraded
+        --mdc-ripple-fg-opacity: 0.24
+
+@supports not (-ms-ime-align: auto)
+    .mdc-fab
+        &::after,
+        &::before
+            /* @alternate
+            background-color: var(--mdc-theme-on-secondary, #fff)
 
 /*!
  *Material Components for the Web
@@ -948,80 +952,80 @@ td, th
  *License: MIT
 
 .mdc-elevation--z0
-  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 0 0 0 rgba(0, 0, 0, 0.14), 0 0 0 0 rgba(0, 0, 0, 0.12)
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 0 0 0 rgba(0, 0, 0, 0.14), 0 0 0 0 rgba(0, 0, 0, 0.12)
 
 .mdc-elevation--z1
-  box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12)
+    box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12)
 
 .mdc-elevation--z2
-  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12)
+    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12)
 
 .mdc-elevation--z3
-  box-shadow: 0 3px 3px -2px rgba(0, 0, 0, 0.2), 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 1px 8px 0 rgba(0, 0, 0, 0.12)
+    box-shadow: 0 3px 3px -2px rgba(0, 0, 0, 0.2), 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 1px 8px 0 rgba(0, 0, 0, 0.12)
 
 .mdc-elevation--z4
-  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12)
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12)
 
 .mdc-elevation--z5
-  box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 5px 8px 0 rgba(0, 0, 0, 0.14), 0 1px 14px 0 rgba(0, 0, 0, 0.12)
+    box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 5px 8px 0 rgba(0, 0, 0, 0.14), 0 1px 14px 0 rgba(0, 0, 0, 0.12)
 
 .mdc-elevation--z6
-  box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12)
+    box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12)
 
 .mdc-elevation--z7
-  box-shadow: 0 4px 5px -2px rgba(0, 0, 0, 0.2), 0 7px 10px 1px rgba(0, 0, 0, 0.14), 0 2px 16px 1px rgba(0, 0, 0, 0.12)
+    box-shadow: 0 4px 5px -2px rgba(0, 0, 0, 0.2), 0 7px 10px 1px rgba(0, 0, 0, 0.14), 0 2px 16px 1px rgba(0, 0, 0, 0.12)
 
 .mdc-elevation--z8
-  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12)
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12)
 
 .mdc-elevation--z9
-  box-shadow: 0 5px 6px -3px rgba(0, 0, 0, 0.2), 0 9px 12px 1px rgba(0, 0, 0, 0.14), 0 3px 16px 2px rgba(0, 0, 0, 0.12)
+    box-shadow: 0 5px 6px -3px rgba(0, 0, 0, 0.2), 0 9px 12px 1px rgba(0, 0, 0, 0.14), 0 3px 16px 2px rgba(0, 0, 0, 0.12)
 
 .mdc-elevation--z10
-  box-shadow: 0 6px 6px -3px rgba(0, 0, 0, 0.2), 0 10px 14px 1px rgba(0, 0, 0, 0.14), 0 4px 18px 3px rgba(0, 0, 0, 0.12)
+    box-shadow: 0 6px 6px -3px rgba(0, 0, 0, 0.2), 0 10px 14px 1px rgba(0, 0, 0, 0.14), 0 4px 18px 3px rgba(0, 0, 0, 0.12)
 
 .mdc-elevation--z11
-  box-shadow: 0 6px 7px -4px rgba(0, 0, 0, 0.2), 0 11px 15px 1px rgba(0, 0, 0, 0.14), 0 4px 20px 3px rgba(0, 0, 0, 0.12)
+    box-shadow: 0 6px 7px -4px rgba(0, 0, 0, 0.2), 0 11px 15px 1px rgba(0, 0, 0, 0.14), 0 4px 20px 3px rgba(0, 0, 0, 0.12)
 
 .mdc-elevation--z12
-  box-shadow: 0 7px 8px -4px rgba(0, 0, 0, 0.2), 0 12px 17px 2px rgba(0, 0, 0, 0.14), 0 5px 22px 4px rgba(0, 0, 0, 0.12)
+    box-shadow: 0 7px 8px -4px rgba(0, 0, 0, 0.2), 0 12px 17px 2px rgba(0, 0, 0, 0.14), 0 5px 22px 4px rgba(0, 0, 0, 0.12)
 
 .mdc-elevation--z13
-  box-shadow: 0 7px 8px -4px rgba(0, 0, 0, 0.2), 0 13px 19px 2px rgba(0, 0, 0, 0.14), 0 5px 24px 4px rgba(0, 0, 0, 0.12)
+    box-shadow: 0 7px 8px -4px rgba(0, 0, 0, 0.2), 0 13px 19px 2px rgba(0, 0, 0, 0.14), 0 5px 24px 4px rgba(0, 0, 0, 0.12)
 
 .mdc-elevation--z14
-  box-shadow: 0 7px 9px -4px rgba(0, 0, 0, 0.2), 0 14px 21px 2px rgba(0, 0, 0, 0.14), 0 5px 26px 4px rgba(0, 0, 0, 0.12)
+    box-shadow: 0 7px 9px -4px rgba(0, 0, 0, 0.2), 0 14px 21px 2px rgba(0, 0, 0, 0.14), 0 5px 26px 4px rgba(0, 0, 0, 0.12)
 
 .mdc-elevation--z15
-  box-shadow: 0 8px 9px -5px rgba(0, 0, 0, 0.2), 0 15px 22px 2px rgba(0, 0, 0, 0.14), 0 6px 28px 5px rgba(0, 0, 0, 0.12)
+    box-shadow: 0 8px 9px -5px rgba(0, 0, 0, 0.2), 0 15px 22px 2px rgba(0, 0, 0, 0.14), 0 6px 28px 5px rgba(0, 0, 0, 0.12)
 
 .mdc-elevation--z16
-  box-shadow: 0 8px 10px -5px rgba(0, 0, 0, 0.2), 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12)
+    box-shadow: 0 8px 10px -5px rgba(0, 0, 0, 0.2), 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12)
 
 .mdc-elevation--z17
-  box-shadow: 0 8px 11px -5px rgba(0, 0, 0, 0.2), 0 17px 26px 2px rgba(0, 0, 0, 0.14), 0 6px 32px 5px rgba(0, 0, 0, 0.12)
+    box-shadow: 0 8px 11px -5px rgba(0, 0, 0, 0.2), 0 17px 26px 2px rgba(0, 0, 0, 0.14), 0 6px 32px 5px rgba(0, 0, 0, 0.12)
 
 .mdc-elevation--z18
-  box-shadow: 0 9px 11px -5px rgba(0, 0, 0, 0.2), 0 18px 28px 2px rgba(0, 0, 0, 0.14), 0 7px 34px 6px rgba(0, 0, 0, 0.12)
+    box-shadow: 0 9px 11px -5px rgba(0, 0, 0, 0.2), 0 18px 28px 2px rgba(0, 0, 0, 0.14), 0 7px 34px 6px rgba(0, 0, 0, 0.12)
 
 .mdc-elevation--z19
-  box-shadow: 0 9px 12px -6px rgba(0, 0, 0, 0.2), 0 19px 29px 2px rgba(0, 0, 0, 0.14), 0 7px 36px 6px rgba(0, 0, 0, 0.12)
+    box-shadow: 0 9px 12px -6px rgba(0, 0, 0, 0.2), 0 19px 29px 2px rgba(0, 0, 0, 0.14), 0 7px 36px 6px rgba(0, 0, 0, 0.12)
 
 .mdc-elevation--z20
-  box-shadow: 0 10px 13px -6px rgba(0, 0, 0, 0.2), 0 20px 31px 3px rgba(0, 0, 0, 0.14), 0 8px 38px 7px rgba(0, 0, 0, 0.12)
+    box-shadow: 0 10px 13px -6px rgba(0, 0, 0, 0.2), 0 20px 31px 3px rgba(0, 0, 0, 0.14), 0 8px 38px 7px rgba(0, 0, 0, 0.12)
 
 .mdc-elevation--z21
-  box-shadow: 0 10px 13px -6px rgba(0, 0, 0, 0.2), 0 21px 33px 3px rgba(0, 0, 0, 0.14), 0 8px 40px 7px rgba(0, 0, 0, 0.12)
+    box-shadow: 0 10px 13px -6px rgba(0, 0, 0, 0.2), 0 21px 33px 3px rgba(0, 0, 0, 0.14), 0 8px 40px 7px rgba(0, 0, 0, 0.12)
 
 .mdc-elevation--z22
-  box-shadow: 0 10px 14px -6px rgba(0, 0, 0, 0.2), 0 22px 35px 3px rgba(0, 0, 0, 0.14), 0 8px 42px 7px rgba(0, 0, 0, 0.12)
+    box-shadow: 0 10px 14px -6px rgba(0, 0, 0, 0.2), 0 22px 35px 3px rgba(0, 0, 0, 0.14), 0 8px 42px 7px rgba(0, 0, 0, 0.12)
 
 .mdc-elevation--z23
-  box-shadow: 0 11px 14px -7px rgba(0, 0, 0, 0.2), 0 23px 36px 3px rgba(0, 0, 0, 0.14), 0 9px 44px 8px rgba(0, 0, 0, 0.12)
+    box-shadow: 0 11px 14px -7px rgba(0, 0, 0, 0.2), 0 23px 36px 3px rgba(0, 0, 0, 0.14), 0 9px 44px 8px rgba(0, 0, 0, 0.12)
 
 .mdc-elevation--z24
-  box-shadow: 0 11px 15px -7px rgba(0, 0, 0, 0.2), 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12)
+    box-shadow: 0 11px 15px -7px rgba(0, 0, 0, 0.2), 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12)
 
 .mdc-elevation-transition
-  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1)
-  will-change: box-shadow
+    transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1)
+    will-change: box-shadow
